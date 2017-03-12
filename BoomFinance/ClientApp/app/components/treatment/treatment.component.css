@@ -1,0 +1,26 @@
+﻿#treatment {
+	margin-bottom: 5px;
+	width: 500px;
+	height:100px;
+	padding: 10px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.treatment-detail {
+	background-color: seagreen;
+	width: 635px;
+	float: right;
+	padding: 10px;
+
+}
+
+.inprogress{
+	background-color: yellow;
+}
+
+.error {
+		background-color: red;
+}
+.success {
+		background-color: seagreen;
+}
