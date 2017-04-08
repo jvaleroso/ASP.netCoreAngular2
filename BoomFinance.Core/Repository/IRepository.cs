@@ -8,9 +8,9 @@ namespace BoomFinance.Core.Repository
 	public interface IRepository<T> where T : class
 	{
 		Task<List<T>> GetListAsync();
-		Task<T> FindOne(string id);
-		Task Add(T entity);
-		Task<DeleteResult> Delete(string id);
-		Task<ReplaceOneResult> Update(string id, T entity);
+		Task<T> FindOneAsync(string id);
+		Task AddAsync(T entity);
+		Task<DeleteResult> DeleteAsync(string id);
+		Task<ReplaceOneResult> UpdateAsync(string id, T entity);
 	}
 }

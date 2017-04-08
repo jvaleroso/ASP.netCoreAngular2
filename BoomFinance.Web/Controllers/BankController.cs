@@ -15,29 +15,61 @@ namespace BoomFinance.Web.Controllers
 			_repository = repository;
 		}
 
-		public async Task<IActionResult> GetAll()
+		[HttpGet]
+		public async Task<IActionResult> GetAllAsync()
 		{
 			var banks = await _repository.GetListAsync();
 			return new ObjectResult(banks);
 		}
 
 		[HttpGet("{id}", Name = "GetBank")]
-		public async Task<IActionResult> GetById(string id)
+		public async Task<IActionResult> GetByIdAsync(string id)
 		{
-			var bank = await _repository.FindOne(id);
+			var bank = await _repository.FindOneAsync(id);
 			return new ObjectResult(bank);
 		}
 
-		[HttpPost]
-		public async Task<IActionResult> Create([FromBody]Bank bank)
+		[HttpPut("{id}")]
+		public async Task<IActionResult> UpdateAsync(string id, [FromBody]Bank updatedBank)
 		{
-			if(bank == null)
+			if (updatedBank == null || updatedBank.Id != id)
 			{
 				return BadRequest();
 			}
 
-			await _repository.Add(bank);
+			var bank = await _repository.FindOneAsync(id);
+			if (bank == null)
+			{
+				return NotFound();
+			}
+
+			await _repository.UpdateAsync(id, updatedBank);
+			return new NoContentResult();
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> CreateAsync([FromBody]Bank bank)
+		{
+			if (bank == null)
+			{
+				return BadRequest();
+			}
+
+			await _repository.AddAsync(bank);
 			return CreatedAtRoute("GetBank", new { id = bank.Id }, bank);
 		}
-	} 
+
+		[HttpDelete]
+		public async Task<IActionResult> DeleteAsync(string id)
+		{
+			var bank = await _repository.FindOneAsync(id);
+			if (bank == null)
+			{
+				return NotFound();
+			}
+
+			await _repository.DeleteAsync(id);
+			return new NoContentResult();
+		}
+	}
 }
