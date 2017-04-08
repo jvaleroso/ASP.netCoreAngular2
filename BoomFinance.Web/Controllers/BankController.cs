@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace BoomFinance.Web
+namespace BoomFinance.Web.Controllers
 {
 	[Route("api/[controller]")]
 	public class BankController : Controller
