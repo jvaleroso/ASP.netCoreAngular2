@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using MongoDB.Driver;
 using Microsoft.Extensions.Options;
 using System;
+using BoomFinance.Core.Repository;
+using BoomFinance.Core;
 
 namespace BoomFinance.Data.Repository
 {

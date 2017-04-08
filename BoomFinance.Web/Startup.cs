@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using BoomFinance.Core;
+using BoomFinance.Core.Repository;
+using BoomFinance.Data.Repository;
 
 namespace BoomFinance
 {
@@ -30,6 +33,14 @@ namespace BoomFinance
         {
             // Add framework services.
             services.AddMvc();
+
+			services.Configure<Settings>(options=>
+			{
+				options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+				options.Database = Configuration.GetSection("MongoConnection:Database").Value;
+			});
+
+			services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

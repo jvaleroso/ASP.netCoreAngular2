@@ -1,6 +1,7 @@
 ﻿using System;
 using MongoDB.Driver;
 using Microsoft.Extensions.Options;
+using BoomFinance.Core;
 
 namespace BoomFinance.Data
 {
