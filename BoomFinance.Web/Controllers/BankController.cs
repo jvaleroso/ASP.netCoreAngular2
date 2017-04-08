@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using BoomFinance.Core.Repository;
+using BoomFinance.Core;
 
 namespace BoomFinance.Web.Controllers
 {
@@ -22,8 +24,8 @@ namespace BoomFinance.Web.Controllers
 		[HttpGet("{id}", Name = "GetBank")]
 		public async Task<IActionResult> GetById(string id)
 		{
-			var banks = await _repository.FindOne(id);
-			return new ObjectResult(banks);
+			var bank = await _repository.FindOne(id);
+			return new ObjectResult(bank);
 		}
 
 		[HttpPost]

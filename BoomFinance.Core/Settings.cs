@@ -1,5 +1,6 @@
 ﻿using System;
-namespace BoomFinance
+
+namespace BoomFinance.Core
 {
 	public class Settings
 	{

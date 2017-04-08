@@ -1,7 +1,7 @@
 ﻿using System;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace BoomFinance
+namespace BoomFinance.Core
 {
 	public class Bank: IModel
 	{

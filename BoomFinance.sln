@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoomFinance.Web", "BoomFinance.Web\BoomFinance.Web.csproj", "{405B1CC8-DAC3-49F8-8249-6D94EACF5B6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoomFinance", "BoomFinance\BoomFinance.csproj", "{0FC9091A-6627-4744-A3D7-CBBA70106D3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoomFinance.Core", "BoomFinance.Core\BoomFinance.Core.csproj", "{0FC9091A-6627-4744-A3D7-CBBA70106D3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoomFinance.Data", "BoomFinance.Data\BoomFinance.Data.csproj", "{2A2E18D4-A6F4-4325-AEE3-5BF6508D8B47}"
 EndProject

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using MongoDB.Driver;
 
-namespace BoomFinance
+namespace BoomFinance.Core.Repository
 {
 	public interface IRepository<T> where T : class
 	{
