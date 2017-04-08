@@ -1,0 +1,25 @@
+﻿<h1>Treatments</h1>
+<div *ngIf="treatments">
+	<div style="float: left">
+		<div id="treatment" *ngFor='let treatment of treatments' (click)="onSelect(treatment)" 
+			[class.inprogress] = "treatment.status === 'inprogress'"
+			[class.error] = "treatment.status === 'error'"
+			[class.success] = "treatment.status === 'success'">
+				<h2>{{treatment.name}}</h2>
+		</div>	
+	</div>	
+	<div *ngIf='selectedTreatment' class="treatment-d etail" 
+			[class.inprogress] = "selectedTreatment.status === 'inprogress'"
+			[class.error] = "selectedTreatment.status === 'error'"
+			[class.success] = "selectedTreatment.status === 'success'">
+		<h2>{{selectedTreatment.name}}</h2>
+		<h4>Description: {{selectedTreatment.description}}</h4>
+		<span>Last Run Date: {{selectedTreatment.lastRunDate}}</span>
+		<div>
+			<button type="submit" class="btn btn-success">Run</button>
+		</div>
+	</div>
+	<div style="clearfix: right"></div>
+</div>
+
+
